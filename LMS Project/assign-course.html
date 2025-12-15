@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Course | LMS v2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>LMS v2.0</h2>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="create-course.html">
+                <i class="fas fa-plus-circle"></i>
+                <span>Create Course</span>
+            </a>
+            <a href="assign-course.html" class="active">
+                <i class="fas fa-user-check"></i>
+                <span>Assign Course</span>
+            </a>
+            <a href="enrollments.html">
+                <i class="fas fa-users"></i>
+                <span>Enrollments</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Varshitha+Chinna&background=4F46E5&color=fff" alt="Admin">
+            <div class="user-info">
+                <h4>Varshitha Chinna</h4>
+                <p>Administrator</p>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>Assign Course to Users</h1>
+                <p>Enroll users in courses and track their progress</p>
+            </div>
+            
+            <div class="header-right">
+                <button class="btn-create" id="bulkAssignBtn">
+                    <i class="fas fa-users"></i>
+                    Bulk Assign
+                </button>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Assignment Form -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Assign Course</h3>
+                </div>
+                <div class="card-body">
+                    <form id="assignForm" class="assign-form">
+                        <div class="form-group">
+                            <label for="selectCourse">
+                                <i class="fas fa-book"></i> Select Course
+                            </label>
+                            <select id="selectCourse" required>
+                                <option value="">Choose a course...</option>
+                                <option value="1">Python Fundamentals</option>
+                                <option value="2">Web Development</option>
+                                <option value="3">Data Science</option>
+                                <option value="4">Machine Learning</option>
+                                <option value="5">Cloud Computing</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selectUsers">
+                                <i class="fas fa-user-friends"></i> Select Users
+                            </label>
+                            <div class="users-selector">
+                                <div class="selected-users" id="selectedUsers">
+                                    <span class="placeholder">No users selected</span>
+                                </div>
+                                <button type="button" class="btn-select-users" id="selectUsersBtn">
+                                    <i class="fas fa-plus"></i> Add Users
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dueDate">
+                                <i class="fas fa-calendar-alt"></i> Due Date (Optional)
+                            </label>
+                            <input type="date" id="dueDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assignmentMessage">
+                                <i class="fas fa-comment-alt"></i> Assignment Message
+                            </label>
+                            <textarea id="assignmentMessage" rows="3" placeholder="Add a personal message for the users..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Assign Course
+                            </button>
+                            <button type="button" class="btn-cancel" onclick="window.location.href='index.html'">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- User List -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Available Users</h3>
+                    <div class="search-mini">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search users..." id="userSearch">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="users-list" id="usersList">
+                        <!-- Users will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Assignments -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Recent Assignments</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Course</th>
+                                <th>Assigned By</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assignmentsTable">
+                            <!-- Data will be loaded via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Users Modal -->
+    <div class="modal" id="usersModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Users</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search by name, email..." id="modalSearch">
+                </div>
+                <div class="modal-users-list" id="modalUsersList">
+                    <!-- Modal users list -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" id="cancelSelection">Cancel</button>
+                <button class="btn-submit" id="confirmSelection">Select Users</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ac.js"></script>
+</body>
+</html>

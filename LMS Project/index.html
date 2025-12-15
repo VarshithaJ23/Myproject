@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS v2.0 | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>LMS v2.0</h2>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="create-course.html">
+                <i class="fas fa-plus-circle"></i>
+                <span>Create Course</span>
+            </a>
+            <a href="assign-course.html">
+                <i class="fas fa-user-check"></i>
+                <span>Assign Course</span>
+            </a>
+            <a href="enrollments.html">
+                <i class="fas fa-users"></i>
+                <span>Enrollments</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Varshia+Chinna&background=4F46E5&color=fff" alt="Admin">
+            <div class="user-info">
+                <h4>Varshitha Chinna</h4>
+                <p>Administrator</p>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's what's happening today.</p>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search courses, users...">
+                </div>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <button class="btn-create">
+                    <i class="fas fa-plus"></i>
+                    New Course
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card stat-blue">
+                <div class="stat-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>24</h3>
+                    <p>Active Courses</p>
+                </div>
+                <div class="stat-trend up">
+                    <i class="fas fa-arrow-up"></i> 12%
+                </div>
+            </div>
+            
+            <div class="stat-card stat-green">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>156</h3>
+                    <p>Enrolled Users</p>
+                </div>
+                <div class="stat-trend up">
+                    <i class="fas fa-arrow-up"></i> 8%
+                </div>
+            </div>
+            
+            <div class="stat-card stat-purple">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>89%</h3>
+                    <p>Completion Rate</p>
+                </div>
+                <div class="stat-trend down">
+                    <i class="fas fa-arrow-down"></i> 3%
+                </div>
+            </div>
+            
+            <div class="stat-card stat-orange">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>42</h3>
+                    <p>Pending Assignments</p>
+                </div>
+                <div class="stat-trend up">
+                    <i class="fas fa-arrow-up"></i> 5%
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Recent Courses -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Courses</h3>
+                    <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card-body">
+                    <div class="course-list">
+                        <div class="course-item">
+                            <div class="course-icon python">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>Python Fundamentals</h4>
+                                <p>Programming • 45 enrolled</p>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span>75% complete</span>
+                                </div>
+                            </div>
+                            <button class="btn-manage">Manage</button>
+                        </div>
+                        
+                        <div class="course-item">
+                            <div class="course-icon web">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>Web Development</h4>
+                                <p>Development • 32 enrolled</p>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <span>60% complete</span>
+                                </div>
+                            </div>
+                            <button class="btn-manage">Manage</button>
+                        </div>
+                        
+                        <div class="course-item">
+                            <div class="course-icon data">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="course-details">
+                                <h4>Data Science</h4>
+                                <p>Analytics • 28 enrolled</p>
+                                <div class="course-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 90%"></div>
+                                    </div>
+                                    <span>90% complete</span>
+                                </div>
+                            </div>
+                            <button class="btn-manage">Manage</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Recent Activities</h3>
+                </div>
+                <div class="card-body">
+                    <div class="activity-timeline">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New User Enrollment</h4>
+                                <p>Sarah Johnson enrolled in Python Fundamentals</p>
+                                <span class="activity-time">10 minutes ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Course Created</h4>
+                                <p>New course "Machine Learning Basics" was added</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Assignment Submitted</h4>
+                                <p>Michael Chen submitted Web Dev assignment</p>
+                                <span class="activity-time">5 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New Discussion</h4>
+                                <p>15 new messages in Data Science forum</p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Quick Actions</h3>
+                </div>
+                <div class="card-body quick-actions">
+                    <a href="create-course.html" class="quick-action">
+                        <div class="action-icon create">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <span>Create Course</span>
+                    </a>
+                    
+                    <a href="assign-course.html" class="quick-action">
+                        <div class="action-icon assign">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <span>Assign Course</span>
+                    </a>
+                    
+                    <a href="enrollments.html" class="quick-action">
+                        <div class="action-icon enroll">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span>View Enrollments</span>
+                    </a>
+                    
+                    <a href="#" class="quick-action">
+                        <div class="action-icon report">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <span>Generate Report</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
